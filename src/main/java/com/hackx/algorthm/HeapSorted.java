@@ -1,7 +1,21 @@
 package com.hackx.algorthm;
 
-/**
- * Created by hackx on 3/1/17.
- */
 public class HeapSorted {
+
+    public static void main(String[] args) {
+        int[] dataArr = {3, 5, 8, 11, 2, 16};
+
+
+    }
+
+
+    public static void buildHeap() {
+
+    }
+
+    public static void adjustHeap() {
+
+    }
+
+
 }
