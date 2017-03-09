@@ -13,8 +13,7 @@ public class FirstSparkProgram {
         String logFile = "/Users/caolei/WorkSpace/hack-child/README.md";
         SparkConf conf = new SparkConf().setMaster("local").setAppName("First Spark Program");
         JavaSparkContext jsc = new JavaSparkContext(conf);
-        jsc.setLogLevel("ERROR");
-
+        jsc.setLogLevel("OFF");
         JavaRDD<String> logRDD = jsc.textFile(logFile);
         JavaPairRDD<String, Integer> linePairRDD = logRDD.mapToPair(line -> new Tuple2(line, 1));
         JavaPairRDD<String, Integer> lineCountPairRDD = linePairRDD.reduceByKey((a, b) -> a + b);

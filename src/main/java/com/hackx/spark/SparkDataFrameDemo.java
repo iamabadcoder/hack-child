@@ -1,13 +1,10 @@
 package com.hackx.spark;
 
-import org.apache.spark.sql.SparkSession;
-
-
 public class SparkDataFrameDemo {
 
     public static void main(String[] args) throws Exception {
-        SparkSession spark = SparkSession.builder().appName("SparkDataFrameDemo")
-                                         .master("local").getOrCreate();
+//        SparkSession spark = SparkSession.builder().appName("SparkDataFrameDemo")
+//                                         .master("local").getOrCreate();
 
         /*Dataset<Row> peopleDF = spark.read().json("src/main/resources/people.text");
 
