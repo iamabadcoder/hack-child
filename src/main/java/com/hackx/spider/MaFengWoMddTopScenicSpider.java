@@ -24,9 +24,10 @@ public class MaFengWoMddTopScenicSpider extends TrspCrawlerAdapter {
             Document document = Jsoup.connect(targetUrl).get();
             Element pnlAllElement = document.select("ul#pnl_all").first();
             Elements mddElements = pnlAllElement.select("a");
-            for (Element mddEle : mddElements) {
-                String mddId = mddEle.attr("href").trim().replace(".html", "").split("/")[2];
-                System.out.println("mddId:'" + mddId + "',mddName:'" + mddEle.ownText().trim() + "'");
+            for (int i = 0; i < mddElements.size(); i++) {
+                Element mddEle = mddElements.get(i);
+                /*String mddId = mddEle.attr("href").trim().replace(".html", "").split("/")[2];*/
+                System.out.println("rankId:'" + String.valueOf(i + 1) + "',mddName:'" + mddEle.ownText().trim() + "'");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -71,14 +72,18 @@ public class MaFengWoMddTopScenicSpider extends TrspCrawlerAdapter {
         try {
             JSONObject jsonObject = JSONObject.parseObject(content);
             Document document = Jsoup.parse(JSONObject.parseObject(jsonObject.get("data").toString()).get("list").toString());
-            for (Element liEle : document.select("li")) {
+
+            Elements liElements = document.select("li");
+
+            for (int i = 0; i < liElements.size(); i++) {
+                Element liEle = liElements.get(i);
                 String scenicName = liEle.text().trim();
                 String scenicId = null;
-                Element aEle = liEle.select("a").first();
+                /*Element aEle = liEle.select("a").first();
                 if (null != aEle) {
                     scenicId = aEle.attr("href").replace(".html", "").trim().split("/")[2];
-                }
-                top10Sights.add(scenicId + "####" + scenicName);
+                }*/
+                top10Sights.add(String.valueOf(i + 1) + "####" + scenicName);
             }
         } catch (Exception e) {
             e.printStackTrace();
