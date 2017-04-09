@@ -1,4 +1,4 @@
-package com.hackx.spark;
+package com.hackx.spark.streaming;
 
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.function.Function2;
