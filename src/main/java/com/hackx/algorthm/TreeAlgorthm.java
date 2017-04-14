@@ -8,12 +8,8 @@ public class TreeAlgorthm {
 
     public static void main(String[] args) {
         TreeNode head = generateTree();
-//        branchFirstSearch(head);
-//        deepFirstSearch(head);
-
-        int a = 10000;
-        long b = 10000;
-        System.out.println(a == b);
+        branchFirstSearch(head);
+        deepFirstSearch(head);
     }
 
     public static TreeNode generateTree() {
@@ -26,6 +22,44 @@ public class TreeAlgorthm {
         head.left.left.left = new TreeNode(7);
         return head;
     }
+
+//    public static void deepFirstSearch(TreeNode root){
+//        Stack<TreeNode> stack = new Stack<TreeNode>();
+//        stack.push(root);
+//        while (!stack.isEmpty()){
+//            TreeNode currNode = stack.pop();
+//            System.out.println(currNode.val);
+//            if (currNode.right != null){
+//                stack.push(currNode.right);
+//            }
+//            if (currNode.left != null){
+//                stack.push(currNode.left);
+//            }
+//        }
+//    }
+//
+//
+//    public static void branchFirstSearch(TreeNode root){
+//        Queue<TreeNode> queue = new ArrayQueue<>();
+//        queue.add(root);
+//        while (!queue.isEmpty()){
+//            TreeNode curNode = queue.poll();
+//            System.out.println(curNode.val);
+//            if (curNode.left != null){
+//                queue.add(curNode.left);
+//            }
+//            if (curNode.right != null){
+//                queue.add(curNode.right);
+//            }
+//        }
+//    }
+
+
+
+
+
+
+
 
     public static void deepFirstSearch(TreeNode head) {
         Stack<TreeNode> stack = new Stack<>();
