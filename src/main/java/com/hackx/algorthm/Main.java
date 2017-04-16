@@ -6,10 +6,15 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        List<List<Integer>> res = combine(5, 3);
-        for (List<Integer> list : res) {
-//            System.out.println(list.toString());
+        String prefixUrl = "https://d2.xia12345.com/down/201610/2001/161018";
+        for (int i = 100; i <= 380; i++) {
+            System.out.println(prefixUrl + i + ".mp4");
         }
+
+//        List<List<Integer>> res = combine(5, 3);
+//        for (List<Integer> list : res) {
+////            System.out.println(list.toString());
+//        }
     }
 
     public static List<List<Integer>> combine(int n, int k) {
